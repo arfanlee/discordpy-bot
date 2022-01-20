@@ -29,10 +29,10 @@ class Weather(commands.Cog):
             embed.add_field(name='Feels like:', value=feels_like, inline=True)
             embed.add_field(name='High / Low:', value=str(highLow), inline=False)
             embed.set_footer(text='Powered by: OpenWeather', icon_url="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png")
+            await ctx.send(embed=embed)
         else:
-            embed.set_author(name='Please enter correct city.')
+            await ctx.send('Please enter correct city.')
 
-        await ctx.send(embed=embed)
 
 def setup(bot):
     bot.add_cog(Weather(bot))
